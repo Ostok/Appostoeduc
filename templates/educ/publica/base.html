@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block titulo %}<title>Ostoeduc</title>{% endblock titulo %}
-    {% load static %}
-    <link rel="shortcut icon" href="/assets/ostoeduc.ico" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'educ/publica/css/style.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-{% include './header.html' %}
-{% block contenido %}{% endblock contenido %}
-{% include './footer.html' %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block titulo %}<title>Ostoeduc</title>{% endblock titulo %}
+        {% load static %}
+        {% block icon %}<link rel="shortcut icon" href="{% static 'educ/publica/assets/ostoeduc.ico' %}" type="image/x-icon">{% endblock icon %}
+        <link rel="stylesheet" href="{% static 'educ/publica/css/style.css' %}">
+        {% block css %}{% endblock css %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        {% block header %}{% endblock header %}
+        {% block contenido %}{% endblock contenido %}
+        {% include './footer.html' %}
+    </body>
 </html>
