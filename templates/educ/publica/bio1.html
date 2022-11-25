@@ -7,284 +7,268 @@
     {% block header %}
         <header id="bio1">
             {% include './banner.html' %}
-            
-            <img src="{% static 'educ/publica/assets/imgbio1/tira2bio1.jpg' %}" alt="banner ostoeduc" width="100%">
-            <nav>
-                <ul>
-                    <li><a href="{% url 'inicio' %}">Inicio Ostoeduc</a></li>
-                    <li>Biología 1°</li>
-                    <li><a href="/bio1eje1.html">Eje 1 Seres vivos</a></li>
-                    <li><a href="/bio1eje2.html">Eje 2 Reproducción</a></li>
-                    <li><a href="/bio1eje3.html">Eje 3 Diversidad seres vivos</a></li>
-                </ul>
-            </nav>
+            {% include './nav1.html' %}
             <h1>BIOLOGIA 1°</h1>
             <h1>Contenidos de primer año.</h1>
             <br><br>        
         </header>
     {% endblock header%}
     {% block contenido %}
-                <main>
-                    <section>
-                        <h2>La biología como ciencia</h2>
-                        <article>
-                            <h3>¿Qué es la biología?</h3>
-                            <p class="parrafo">
-                                La biología es una de las ciencias en la que se estudia la naturaleza. Forma parte de la cultura de una sociedad, junto a las ciencias sociales, la filosofía, la religión y el arte. La biología comprende un grupo de disciplinas que se ocupan del estudio de los organismos vivos, por ello en muchas ocasiones se la denomina ciencias de la vida o ciencias biológicas. 
-                            </p>
-                            <p class="parrafo">En el pasado, el estudio de los seres vivos, se consideraba una actividad de menor importancia con respecto a aquellas ciencias que empleaban muchas operaciones matemáticas para generar sus propios conocimientos como la física, la química y la astronomía. La biología como ciencia permaneció latente hasta los siglos XIX y XX. No obstante, durante los siglos XVII y XVIII, se acumulo una gran cantidad de conocimientos sobre la estructura y el funcionamiento de los seres vivos, así como la generación de diversos sistemas para clasificarlos. El conocimiento sobre el cuerpo humano dio lugar al desarrollo de la anatomía y la fisiología, y el estudio de las plantas y los animales conforman dos grandes campos del conocimiento: la botánica y la zoología.</p>
-                            <p class="parrafo" >En los siglos XIX y XX, la enunciación de importantes conceptos y teorías contribuyo al establecimiento de la biología como disciplina científica, a tal punto que es una de las ciencias que mayor desarrollo ha tenido en la segunda mitad del siglo XX.</p>
-                            <figure class="figura">
-                                <img src="{% static 'educ/publica/assets/imgbio1/the_anatomy_lesson.jpg' %}" alt="pintura leccion de anatomia" width="100%">
-                                <figcaption>Figura 1: pintura la lección de anatomía.</figcaption>
-                            </figure>
-                            
-                            <p class="parrafo">En el comienzo de este siglo XXI, se produjo un crecimiento explosivo de los conocimientos biológicos, que abarca desde el ADN hasta los grandes sistemas ecológicos, incluyendo además nuevas evidencias acerca de como han evolucionado los seres vivos desde su origen. Los descubrimientos en genética, biología celular y molecular, neurobiología, biología evolutiva y ecología han sido vertiginosos; además, han tenido un fuerte impacto tanto en la vida cotidiana y en el desarrollo de la sociedad, como en el avance de la industria, la medicina, la agricultura y la ganadería, la alimentación humana, entre otros.</p>
-                            <p class="parrafo">En la actualidad, para los ciudadanos, los conocimientos biológicos resultan muy necesarios pues permiten comprender, y tomar decisiones respecto de cuestiones tales como la prevención de enfermedades infecciosas, los cambios climáticos perjudiciales, el aumento de las necesidades alimentarias en todo el mundo, la destrucción de los hábitats naturales y la perdida de la biodiversidad, la utilización de técnicas de reproducción asistida y la modificación de genes con distintos fines, etc. Ninguno de estos problemas se podría abordar satisfactoriamente sin tener en cuenta ciertos conocimientos científicos, en especial, los realizados en el campo de la biología.</p>
-                            <h3>Actividad científica</h3>
-                            <p class="parrafo">El principal interés de los científicos en general, y de los biólogos en particular, por el trabajo que realizan es la insaciable curiosidad y el deseo de conocer mejor el mundo en el que viven. Una fuente inagotable de satisfacción para los investigadores es poder aportar un nuevo conocimiento científico.</p>
-                            <p class="parrafo">La pasión y la curiosidad puestas en juego en su trabajo les permitan mitigar el esfuerzo y hasta el aburrimiento de reunir gran cantidad de datos, y superar las frustraciones ante los resultados errados o la “resistencia” que oponen ciertos fenómenos a ser desentrañados.</p>
-                            <p class="parrafo">Puede considerarse que el motor más importante que pone en funcionamiento la actividad de los biólogos es el interés por explicar los secretos del mundo viviente.</p>
-                            <figure class="figura">
-                                <img src="{% static 'educ/publica/assets/imgbio1/biology-science.jpg' %}" alt="pintura leccion de anatomia" width="100%">
-                                <figcaption>Figura 2: la biologia como ciencia.</figcaption>
-                            </figure>
-                            <p class="parrafo">La biología, así como la ciencia en general, constituye una actividad humana que, con mucho trabajo, genera conocimientos sobre el mundo, que nos hacen capaces de actuar sobre el para entenderlo, transformarlo y mejorarlo. Pero, como toda actividad humana, también esta ligada a las ideas y a los valores de la sociedad en la que se encuentran en un determinado momento histórico.</p>
-                            <p class="parrafo">Teniendo esto en cuenta, es posible hallar en muchos científicos, un interés legitimo de encontrar nuevos conocimientos que construyan a mejorar la calidad de vida de las personas. Los problemas de contaminación, los de salud, los de la agricultura o del hambre preocupan especialmente a la comunidad mundial y a la de científicos en particular, quienes trabajan en la búsqueda de más y mejores soluciones.</p>
-                        </article>
-                        
-                    </section>
-            
-                    <section id="bio1eje1">
-                    <div class="container">
-                        <h2>Contenidos eje 1: Los seres vivos, unidad y diversidad</h2>
-                        <div id="carouselBiologyEje1" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.1.jpg' %}" alt="Biología 1 - Tema 1.1" width="100%">
-                                    <h3>Tema 1.1</h3>
-                                    <a href="/bio1eje1.html#1.1"><h3>Caracterización de los seres vivos.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.2.jpg' %}" alt="Biología 1 - Tema 1.2" width="100%">
-                                    <h3>Tema 1.2</h3>
-                                    <a href="./bio1eje1.html#1.2"><h3>Concepto de sistema.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.3.jpg' %}" alt="Biología 1 - Tema 1.3" width="100%">
-                                    <h3>Tema 1.3</h3>
-                                    <a href="./bio1eje1.html#1.3"><h3>Niveles de organizacion de la materia.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.4.jpg' %}" alt="Biología 1 - Tema 1.4" width="100%">
-                                    <h3>Tema 1.4</h3>
-                                    <a href="./bio1eje1.html#1.4"><h3>Unidad y diversidad de funciones y estructuras.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.5.jpg' %}" alt="Biología 1 - Tema 1.5" width="100%">
-                                    <h3>Tema 1.5</h3>
-                                    <a href="./bio1eje1.html#1.5"><h3>Biodiversidad: aspectos evolutivos.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.6.jpg' %}" alt="Biología 1 - Tema 1.6" width="100%">
-                                    <h3>Tema 1.6</h3>
-                                    <a href="./bio1eje1.html#1.6"><h3>Arboles de parentezco entre los seres vivos.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.7.jpg' %}" alt="Biología 1 - Tema 1.7" width="100%">
-                                    <h3>Tema 1.7</h3>
-                                    <a href="./bio1eje1.html#1.7"><h3>El origen de la vida.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.8.jpg' %}" alt="Biología 1 - Tema 1.8" width="100%">
-                                    <h3>Tema 1.8</h3>
-                                    <a href="./bio1eje1.html#1.8"><h3>Origen de células eucariotas. Teoría endosimbiótica.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.9.jpg' %}" alt="Biología 1 - Tema 1.9" width="100%">
-                                    <h3>Tema 1.9</h3>
-                                    <a href="./bio1eje1.html#1.9"><h3>Concepto general de célula procariota y eucariota.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.10.jpg' %}" alt="Biología 1 - Tema 1.10" width="100%">
-                                    <h3>Tema 1.10</h3>
-                                    <a href="./bio1eje1.html#1.10"><h3>Origen de la multicelularidad.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.11.jpg' %}" alt="Biología 1 - Tema 1.11" width="100%">
-                                    <h3>Tema 1.11</h3>
-                                    <a href="./bio1eje1.html#1.11""><h3>La continuidad de la vida en las condiciones actuales: teoría celular.</h3"></a>
-            
-                                </div>           
+        <main>
+            <section>
+                <h2>La biología como ciencia</h2>
+                <article>
+                    <h3>¿Qué es la biología?</h3>
+                    <p class="parrafo">
+                        La biología es una de las ciencias en la que se estudia la naturaleza. Forma parte de la cultura de una sociedad, junto a las ciencias sociales, la filosofía, la religión y el arte. La biología comprende un grupo de disciplinas que se ocupan del estudio de los organismos vivos, por ello en muchas ocasiones se la denomina ciencias de la vida o ciencias biológicas. 
+                    </p>
+                    <p class="parrafo">En el pasado, el estudio de los seres vivos, se consideraba una actividad de menor importancia con respecto a aquellas ciencias que empleaban muchas operaciones matemáticas para generar sus propios conocimientos como la física, la química y la astronomía. La biología como ciencia permaneció latente hasta los siglos XIX y XX. No obstante, durante los siglos XVII y XVIII, se acumulo una gran cantidad de conocimientos sobre la estructura y el funcionamiento de los seres vivos, así como la generación de diversos sistemas para clasificarlos. El conocimiento sobre el cuerpo humano dio lugar al desarrollo de la anatomía y la fisiología, y el estudio de las plantas y los animales conforman dos grandes campos del conocimiento: la botánica y la zoología.</p>
+                    <p class="parrafo" >En los siglos XIX y XX, la enunciación de importantes conceptos y teorías contribuyo al establecimiento de la biología como disciplina científica, a tal punto que es una de las ciencias que mayor desarrollo ha tenido en la segunda mitad del siglo XX.</p>
+                    <figure class="figura">
+                        <img src="{% static 'educ/publica/assets/imgbio1/the_anatomy_lesson.jpg' %}" alt="pintura leccion de anatomia" width="100%">
+                        <figcaption>Figura 1: pintura la lección de anatomía.</figcaption>
+                    </figure>
+                    
+                    <p class="parrafo">En el comienzo de este siglo XXI, se produjo un crecimiento explosivo de los conocimientos biológicos, que abarca desde el ADN hasta los grandes sistemas ecológicos, incluyendo además nuevas evidencias acerca de como han evolucionado los seres vivos desde su origen. Los descubrimientos en genética, biología celular y molecular, neurobiología, biología evolutiva y ecología han sido vertiginosos; además, han tenido un fuerte impacto tanto en la vida cotidiana y en el desarrollo de la sociedad, como en el avance de la industria, la medicina, la agricultura y la ganadería, la alimentación humana, entre otros.</p>
+                    <p class="parrafo">En la actualidad, para los ciudadanos, los conocimientos biológicos resultan muy necesarios pues permiten comprender, y tomar decisiones respecto de cuestiones tales como la prevención de enfermedades infecciosas, los cambios climáticos perjudiciales, el aumento de las necesidades alimentarias en todo el mundo, la destrucción de los hábitats naturales y la perdida de la biodiversidad, la utilización de técnicas de reproducción asistida y la modificación de genes con distintos fines, etc. Ninguno de estos problemas se podría abordar satisfactoriamente sin tener en cuenta ciertos conocimientos científicos, en especial, los realizados en el campo de la biología.</p>
+                    <h3>Actividad científica</h3>
+                    <p class="parrafo">El principal interés de los científicos en general, y de los biólogos en particular, por el trabajo que realizan es la insaciable curiosidad y el deseo de conocer mejor el mundo en el que viven. Una fuente inagotable de satisfacción para los investigadores es poder aportar un nuevo conocimiento científico.</p>
+                    <p class="parrafo">La pasión y la curiosidad puestas en juego en su trabajo les permitan mitigar el esfuerzo y hasta el aburrimiento de reunir gran cantidad de datos, y superar las frustraciones ante los resultados errados o la “resistencia” que oponen ciertos fenómenos a ser desentrañados.</p>
+                    <p class="parrafo">Puede considerarse que el motor más importante que pone en funcionamiento la actividad de los biólogos es el interés por explicar los secretos del mundo viviente.</p>
+                    <figure class="figura">
+                        <img src="{% static 'educ/publica/assets/imgbio1/biology-science.jpg' %}" alt="pintura leccion de anatomia" width="100%">
+                        <figcaption>Figura 2: la biologia como ciencia.</figcaption>
+                    </figure>
+                    <p class="parrafo">La biología, así como la ciencia en general, constituye una actividad humana que, con mucho trabajo, genera conocimientos sobre el mundo, que nos hacen capaces de actuar sobre el para entenderlo, transformarlo y mejorarlo. Pero, como toda actividad humana, también esta ligada a las ideas y a los valores de la sociedad en la que se encuentran en un determinado momento histórico.</p>
+                    <p class="parrafo">Teniendo esto en cuenta, es posible hallar en muchos científicos, un interés legitimo de encontrar nuevos conocimientos que construyan a mejorar la calidad de vida de las personas. Los problemas de contaminación, los de salud, los de la agricultura o del hambre preocupan especialmente a la comunidad mundial y a la de científicos en particular, quienes trabajan en la búsqueda de más y mejores soluciones.</p>
+                </article>        
+            </section>
+
+            <section id="bio1eje1">
+                <div class="container">
+                    <h2>Contenidos eje 1: Los seres vivos, unidad y diversidad</h2>
+                    <div id="carouselBiologyEje1" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.1.jpg' %}" alt="Biología 1 - Tema 1.1" width="100%">
+                                <h3>Tema 1.1</h3>
+                                <a href="/bio1eje1.html#1.1"><h3>Caracterización de los seres vivos.</h3></a>
                             </div>
-                            <a class="left carousel-control" href="#carouselBiologyEje1" data-slide="prev">
-                                 <span class="glyphicon glyphicon-chevron-left"></span>
-                                 <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#carouselBiology1" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    </section>
-                    <br><br>
-                    <section id="bio1eje2">
-                    <div class="container">
-                        <h2>Contenidos eje 2: Panorama general de la reproducción</h2>
-                        <div id="carouselBiologyEje2" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.1.jpg' %}" alt="Biología 1 - Tema 2.1" width="100%">
-                                    <h3>Tema 2.1</h3>
-                                    <a href="/bio1eje2.html#2.1"><h3>Concepto de reproducción en seres vivos.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.2.jpg' %}" alt="Biología 1 - Tema 2.2" width="100%">
-                                    <h3>Tema 2.2</h3>
-                                    <a href="./bio1eje1.html#2.2"><h3>Reproducción asexual.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.3.jpg' %}" alt="Biología 1 - Tema 2.3" width="100%">
-                                    <h3>Tema 2.3</h3>
-                                    <a href="./bio1eje1.html#2.3"><h3>Reproducción sexual: células sexuales, fecundación.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.4.jpg' %}" alt="Biología 1 - Tema 2.4" width="100%">
-                                    <h3>Tema 2.4</h3>
-                                    <a href="./bio1eje1.html#2.4"><h3>Sistemas reproductores femenino y masculino en humanos: estructuras y funcionamiento.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.5.jpg' %}" alt="Biología 1 - Tema 2.5" width="100%">
-                                    <h3>Tema 2.5</h3>
-                                    <a href="./bio1eje1.html#2.5"><h3>La gestación, el embarazo, el parto, el puerperio.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.6.jpg' %}" alt="Biología 1 - Tema 2.6" width="100%">
-                                    <h3>Tema 2.6</h3>
-                                    <a href="./bio1eje1.html#2.6"><h3>Desarrollo embrionario en humanos.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.7.jpg' %}" alt="Biología 1 - Tema 2.7" width="100%">
-                                    <h3>Tema 2.7</h3>
-                                    <a href="./bio1eje1.html#2.7"><h3>La pubertad y la adolescencia: crecimineto y desarrollo. Cambios anatómicos y fisiológicos en distintas etapas vitales.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.8.jpg' %}" alt="Biología 1 - Tema 2.8" width="100%">
-                                    <h3>Tema 2.8</h3>
-                                    <a href="./bio1eje1.html#2.8"><h3>Reflexión sobre los cambios corporales, la responsabilidad individual y/o de la pareja en cuestiones relacionadas con el cuidado del cuerpo y la salud reproductiva.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.9.jpg' %}" alt="Biología 1 - Tema 2.9" width="100%">
-                                    <h3>Tema 2.9</h3>
-                                    <a href="./bio1eje1.html#2.9"><h3>Proceso salud-enfermedad.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.10.jpg' %}
-                                    " alt="Biología 1 - Tema 2.10" width="100%">
-                                    <h3>Tema 2.10</h3>
-                                    <a href="./bio1eje1.html#2.10"><h3>Prevención-tratamientos.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.11.jpg' %}" alt="Biología 1 - Tema 2.11" width="100%">
-                                    <h3>Tema 2.11</h3>
-                                    <a href="./bio1eje1.html#2.11"><h3>Promoción de la salud sexual y reproductiva. Prácticas de prevención y cuidado. Infecciones de transmisión sexual y otras infecciones.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.12.jpg' %}" alt="Biología 1 - Tema 2.12" width="100%">
-                                    <h3>Tema 2.12</h3>
-                                    <a href="./bio1eje1.html#2.12"><h3>El embarazo adolescente.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.13.jpg' %}" alt="Biología 1 - Tema 2.13" width="100%">
-                                    <h3>Tema 2.13</h3>
-                                    <a href="./bio1eje1.html#2.13"><h3>Metodos anticonceptivos.</h3></a>
-                                </div>  
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.2.jpg' %}" alt="Biología 1 - Tema 1.2" width="100%">
+                                <h3>Tema 1.2</h3>
+                                <a href="./bio1eje1.html#1.2"><h3>Concepto de sistema.</h3></a>
                             </div>
-                            <a class="left carousel-control" href="#carouselBiologyEje2" data-slide="prev">
-                                 <span class="glyphicon glyphicon-chevron-left"></span>
-                                 <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#carouselBiologyEje2" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-            
-            
-                    </section>
-                    <br><br>
-                    <section id="bio1eje3">
-                    <div class="container">
-                        <h2>Contenidos eje 3: La diversidad de los seres vivos</h2>
-                        <div id="carouselBiologyEje3" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.1.jpg' %}" alt="Biología 1 - Tema 3.1" width="100%">
-                                    <h3>Tema 3.1</h3>
-                                    <a href="/bio1eje3.html#3.1"><h3>La diversidad biológica como consecuencias de la evolución.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.2.jpg' %}" alt="Biología 1 - Tema3.2" width="100%">
-                                    <h3>Tema 3.2</h3>
-                                    <a href="./bio1eje3.html#3.2"><h3>Relaciones de parentesco entre los seres vivos.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.3.jpg' %}" alt="Biología 1 - Tema3.3" width="100%">
-                                    <h3>Tema 3.3</h3>
-                                    <a href="./bio1eje3.html#3.3"><h3>Arboles filogenéticos.</h3></a>
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.4.jpg' %}" alt="Biología 1 - Tema 3.4" width="100%">
-                                    <h3>Tema 3.4</h3>
-                                    <a href="./bio1eje3.html#3.4"><h3>Clasificación biológica basada en parentescos.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.5.jpg' %}" alt="Biología 1 - Tema 3.5" width="100%">
-                                    <h3>Tema 3.5</h3>
-                                    <a href="./bio1eje3.html#3.5"><h3>Actual clasificación en tres dominios: Archaea, Bacteria y Eukarya, y relación con clasificaciones anteriores.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.6.jpg' %}" alt="Biología 1 - Tema 3.6" width="100%">
-                                    <h3>Tema 3.6</h3>
-                                    <a href="./bio1eje3.html#3.6"><h3>Grandes adquisiones evolutivas de los grandes grupos de organismos: bacterias, hongos, plantas, animales.</h3></a>
-            
-                                </div>
-                                <div class="item">
-                                    <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.7.jpg' %}" alt="Biología 1 - Tema 3.7" width="100%">
-                                    <h3>Tema 3.7</h3>
-                                    <a href="./bio1eje3.html#3.7"><h3>Importancia de la preservación de la biodiversidad.</h3></a>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.3.jpg' %}" alt="Biología 1 - Tema 1.3" width="100%">
+                                <h3>Tema 1.3</h3>
+                                <a href="./bio1eje1.html#1.3"><h3>Niveles de organizacion de la materia.</h3></a>
                             </div>
-                            <a class="left carousel-control" href="#carouselBiologyEje3" data-slide="prev">
-                                 <span class="glyphicon glyphicon-chevron-left"></span>
-                                 <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#carouselBiologyEje3" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.4.jpg' %}" alt="Biología 1 - Tema 1.4" width="100%">
+                                <h3>Tema 1.4</h3>
+                                <a href="./bio1eje1.html#1.4"><h3>Unidad y diversidad de funciones y estructuras.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.5.jpg' %}" alt="Biología 1 - Tema 1.5" width="100%">
+                                <h3>Tema 1.5</h3>
+                                <a href="./bio1eje1.html#1.5"><h3>Biodiversidad: aspectos evolutivos.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.6.jpg' %}" alt="Biología 1 - Tema 1.6" width="100%">
+                                <h3>Tema 1.6</h3>
+                                <a href="./bio1eje1.html#1.6"><h3>Arboles de parentezco entre los seres vivos.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.7.jpg' %}" alt="Biología 1 - Tema 1.7" width="100%">
+                                <h3>Tema 1.7</h3>
+                                <a href="./bio1eje1.html#1.7"><h3>El origen de la vida.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.8.jpg' %}" alt="Biología 1 - Tema 1.8" width="100%">
+                                <h3>Tema 1.8</h3>
+                                <a href="./bio1eje1.html#1.8"><h3>Origen de células eucariotas. Teoría endosimbiótica.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.9.jpg' %}" alt="Biología 1 - Tema 1.9" width="100%">
+                                <h3>Tema 1.9</h3>
+                                <a href="./bio1eje1.html#1.9"><h3>Concepto general de célula procariota y eucariota.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.10.jpg' %}" alt="Biología 1 - Tema 1.10" width="100%">
+                                <h3>Tema 1.10</h3>
+                                <a href="./bio1eje1.html#1.10"><h3>Origen de la multicelularidad.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.11.jpg' %}" alt="Biología 1 - Tema 1.11" width="100%">
+                                <h3>Tema 1.11</h3>
+                                <a href="./bio1eje1.html#1.11""><h3>La continuidad de la vida en las condiciones actuales: teoría celular.</h3"></a>
+        
+                            </div>           
                         </div>
+                        <a class="left carousel-control" href="#carouselBiologyEje1" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carouselBiology1" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    </section>
-                    <br><br>
-                <img src="{% static 'educ/publica/assets/img/tira_ostoeduc.jpg' %}" alt="banner ostoeduc" width="100%">
-            </main>
+                </div>
+            </section>
+            <br><br>
+            <section id="bio1eje2">
+                <div class="container">
+                    <h2>Contenidos eje 2: Panorama general de la reproducción</h2>
+                    <div id="carouselBiologyEje2" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.1.jpg' %}" alt="Biología 1 - Tema 2.1" width="100%">
+                                <h3>Tema 2.1</h3>
+                                <a href="/bio1eje2.html#2.1"><h3>Concepto de reproducción en seres vivos.</h3></a>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.2.jpg' %}" alt="Biología 1 - Tema 2.2" width="100%">
+                                <h3>Tema 2.2</h3>
+                                <a href="./bio1eje1.html#2.2"><h3>Reproducción asexual.</h3></a>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.3.jpg' %}" alt="Biología 1 - Tema 2.3" width="100%">
+                                <h3>Tema 2.3</h3>
+                                <a href="./bio1eje1.html#2.3"><h3>Reproducción sexual: células sexuales, fecundación.</h3></a>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.4.jpg' %}" alt="Biología 1 - Tema 2.4" width="100%">
+                                <h3>Tema 2.4</h3>
+                                <a href="./bio1eje1.html#2.4"><h3>Sistemas reproductores femenino y masculino en humanos: estructuras y funcionamiento.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.5.jpg' %}" alt="Biología 1 - Tema 2.5" width="100%">
+                                <h3>Tema 2.5</h3>
+                                <a href="./bio1eje1.html#2.5"><h3>La gestación, el embarazo, el parto, el puerperio.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.6.jpg' %}" alt="Biología 1 - Tema 2.6" width="100%">
+                                <h3>Tema 2.6</h3>
+                                <a href="./bio1eje1.html#2.6"><h3>Desarrollo embrionario en humanos.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.7.jpg' %}" alt="Biología 1 - Tema 2.7" width="100%">
+                                <h3>Tema 2.7</h3>
+                                <a href="./bio1eje1.html#2.7"><h3>La pubertad y la adolescencia: crecimineto y desarrollo. Cambios anatómicos y fisiológicos en distintas etapas vitales.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.8.jpg' %}" alt="Biología 1 - Tema 2.8" width="100%">
+                                <h3>Tema 2.8</h3>
+                                <a href="./bio1eje1.html#2.8"><h3>Reflexión sobre los cambios corporales, la responsabilidad individual y/o de la pareja en cuestiones relacionadas con el cuidado del cuerpo y la salud reproductiva.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-1.9.jpg' %}" alt="Biología 1 - Tema 2.9" width="100%">
+                                <h3>Tema 2.9</h3>
+                                <a href="./bio1eje1.html#2.9"><h3>Proceso salud-enfermedad.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.10.jpg' %}
+                                " alt="Biología 1 - Tema 2.10" width="100%">
+                                <h3>Tema 2.10</h3>
+                                <a href="./bio1eje1.html#2.10"><h3>Prevención-tratamientos.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.11.jpg' %}" alt="Biología 1 - Tema 2.11" width="100%">
+                                <h3>Tema 2.11</h3>
+                                <a href="./bio1eje1.html#2.11"><h3>Promoción de la salud sexual y reproductiva. Prácticas de prevención y cuidado. Infecciones de transmisión sexual y otras infecciones.</h3></a>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.12.jpg' %}" alt="Biología 1 - Tema 2.12" width="100%">
+                                <h3>Tema 2.12</h3>
+                                <a href="./bio1eje1.html#2.12"><h3>El embarazo adolescente.</h3></a>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-2.13.jpg' %}" alt="Biología 1 - Tema 2.13" width="100%">
+                                <h3>Tema 2.13</h3>
+                                <a href="./bio1eje1.html#2.13"><h3>Metodos anticonceptivos.</h3></a>
+                            </div>  
+                        </div>
+                        <a class="left carousel-control" href="#carouselBiologyEje2" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carouselBiologyEje2" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <br><br>
+            <section id="bio1eje3">
+                <div class="container">
+                    <h2>Contenidos eje 3: La diversidad de los seres vivos</h2>
+                    <div id="carouselBiologyEje3" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.1.jpg' %}" alt="Biología 1 - Tema 3.1" width="100%">
+                                <h3>Tema 3.1</h3>
+                                <a href="/bio1eje3.html#3.1"><h3>La diversidad biológica como consecuencias de la evolución.</h3></a>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.2.jpg' %}" alt="Biología 1 - Tema3.2" width="100%">
+                                <h3>Tema 3.2</h3>
+                                <a href="./bio1eje3.html#3.2"><h3>Relaciones de parentesco entre los seres vivos.</h3></a>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.3.jpg' %}" alt="Biología 1 - Tema3.3" width="100%">
+                                <h3>Tema 3.3</h3>
+                                <a href="./bio1eje3.html#3.3"><h3>Arboles filogenéticos.</h3></a>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.4.jpg' %}" alt="Biología 1 - Tema 3.4" width="100%">
+                                <h3>Tema 3.4</h3>
+                                <a href="./bio1eje3.html#3.4"><h3>Clasificación biológica basada en parentescos.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.5.jpg' %}" alt="Biología 1 - Tema 3.5" width="100%">
+                                <h3>Tema 3.5</h3>
+                                <a href="./bio1eje3.html#3.5"><h3>Actual clasificación en tres dominios: Archaea, Bacteria y Eukarya, y relación con clasificaciones anteriores.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.6.jpg' %}" alt="Biología 1 - Tema 3.6" width="100%">
+                                <h3>Tema 3.6</h3>
+                                <a href="./bio1eje3.html#3.6"><h3>Grandes adquisiones evolutivas de los grandes grupos de organismos: bacterias, hongos, plantas, animales.</h3></a>
+        
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'educ/publica/assets/imgbio1/bio1-3.7.jpg' %}" alt="Biología 1 - Tema 3.7" width="100%">
+                                <h3>Tema 3.7</h3>
+                                <a href="./bio1eje3.html#3.7"><h3>Importancia de la preservación de la biodiversidad.</h3></a>
+                        </div>
+                        <a class="left carousel-control" href="#carouselBiologyEje3" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carouselBiologyEje3" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
     {% endblock contenido %} 
     

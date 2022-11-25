@@ -15,3 +15,12 @@ def bio3(request):
     
 def eco4(request):
     return render(request,'educ/publica/eco4.html')
+
+def bio1eje1(request):
+    return render(request,'educ/publica/bio1eje1.html')
+
+def bio1eje2(request):
+    return render(request,'educ/publica/bio1eje2.html')
+
+def bio1eje3(request):
+    return render(request,'educ/publica/bio1eje3.html')
