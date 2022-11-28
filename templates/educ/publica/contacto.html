@@ -1,0 +1,26 @@
+{% extends './base.html' %}
+{% block titulo %}<title>Contacto</title>{% endblock titulo %}
+    {% block header %}
+        <header id="materias">
+            {% include './banner.html' %}
+            <nav>
+                <ul>
+                    <li>Contacto</li>
+                    <li><a href="{% url 'bio1' %}">Biología 1°</a></li>
+                    <li><a href="/bio2.html">Biología 2°</a></li>
+                    <li><a href="/bio3.html">Biología 3°</a></li>
+                    <li><a href="/eco4.html">Ecología 4°</a></li>
+                </ul>
+            </nav>
+            <br>        
+        </header>
+    {% endblock header %}
+{% block contenido %}
+    <div class="col-md-6 mb-md-0 mb-6">
+        <form id="contact_form" name="contact_form" action="#" method="POST">
+            {% csrf_token %} 
+            {{form}}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock contenido %}

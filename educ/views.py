@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from educ.forms import ContactoForm
 
 # Create your views here.
 def index(request):
@@ -44,3 +45,8 @@ def bio1eje2(request):
 
 def bio1eje3(request):
     return render(request,'educ/publica/bio1eje3.html')
+    
+    
+def contacto(request):
+    contacto_form = ContactoForm()
+    return render(request,'educ/publica/contacto.html',{'form': contacto_form})
