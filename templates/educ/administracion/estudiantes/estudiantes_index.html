@@ -1,0 +1,28 @@
+{% extends 'educ/publica/index.html' %}
+{% block titulo %}<title> Estudiantes</title>{% endblock titulo %}
+{% block contenido %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Dni</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudiante in listado %}
+                <tr>
+                    <td>{{estudiante.id}}</td>
+                    <td>{{estudiante.nombre}}</td>
+                    <td>{{estudiante.apellido}}</td>
+                    <td>{{estudiante.email}}</td>
+                    <td>{{estudiante.dni}}</td>
+                    <td><button><a href="{% url 'estudiantes_editar' estudiante.id %}">Edit</a></button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="info"><a href="{% url 'estudiante_nuevo' %}">Nuevo</a></button>
+{% endblock contenido %}

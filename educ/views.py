@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from educ.forms import ContactoForm
+from educ.forms import EstudianteForm
+from educ.models import Estudiante
 
 # Create your views here.
 def index(request):
@@ -50,3 +52,40 @@ def bio1eje3(request):
 def contacto(request):
     contacto_form = ContactoForm()
     return render(request,'educ/publica/contacto.html',{'form': contacto_form})
+    
+    
+def estudiante_nuevo(request):
+    if request.method=='POST':
+        formulario = EstudianteForm(request.POST)
+        if formulario.is_valid():
+            nombre=formulario.cleaned_data['nombre']
+            apellido=formulario.cleaned_data['apellido']
+            email=formulario.cleaned_data['email']
+            dni=formulario.cleaned_data['dni']
+            nuevo=Estudiante(nombre=nombre,apellido=apellido,email=email,dni=dni)
+            nuevo.save()
+            return redirect('estudiantes_index')
+    else:
+        formulario = EstudianteForm()
+    return render(request,'educ/administracion/estudiantes/estudiante_nuevo.html',{'form': formulario})
+    
+    
+def estudiantes_index(request):
+    listado = Estudiante.objects.all()
+    return render(request,'educ/administracion/estudiantes/estudiantes_index.html',{'listado':listado})
+    
+    
+def estudiantes_editar(request, id_estudiante):
+    try:
+        estudiante = Estudiante.objects.get(pk=id_estudiante)
+    except Estudiante.DoesNotExist():
+        return HttpResponse("<h1>El id {{id_estudiante}} no existe")
+    if request.method == 'POST':
+        formulario = EstudianteForm(request.POST, instance = estudiante)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('estudiantes_index')
+    else:
+        formulario = EstudianteForm(instance = estudiante)
+        return render(request,'educ/administracion/estudiantes/estudiantes_editar.html', {'form': formulario, 'estudiante': estudiante})
+

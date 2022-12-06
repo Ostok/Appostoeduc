@@ -1,0 +1,10 @@
+{% extends 'educ/publica/index.html' %}
+{% block titulo %}<title>Estudiante Nuevo</title>{% endblock titulo %}
+{% block contenido %}
+    <form action="{% url 'estudiante_nuevo' %}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock contenido %}
+

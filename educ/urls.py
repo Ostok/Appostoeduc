@@ -12,4 +12,7 @@ urlpatterns = [
     path('bio1eje2',views.bio1eje2, name='bio1eje2'),
     path('bio1eje3',views.bio1eje3, name='bio1eje3'),
     path('contacto',views.contacto, name='contacto'),
+    path('estudiante_nuevo',views.estudiante_nuevo, name='estudiante_nuevo'),
+    path('estudiantes',views.estudiantes_index, name='estudiantes_index'),
+    path('estudiantes_editar/<int:id_estudiante>',views.estudiantes_editar, name='estudiantes_editar'),
 ]
