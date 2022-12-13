@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'proyecto_ostoeduc.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER':'',
-        'PASSWORD':'',
+        'NAME': 'mynewdb',
+        'USER':'pesto',
+        'PASSWORD':'Luca_2706',
         'HOST':'127.0.0.1',
         'PORT':'5432',
     }

@@ -42,7 +42,7 @@ class EstudianteForm(forms.ModelForm):
     
     class Meta:
         model = Estudiante
-        exclude = ('ejes',)
+        fields = '__all__'
         widgets = {
             'nombre' : forms.TextInput(
                 attrs={

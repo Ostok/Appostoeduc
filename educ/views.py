@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from educ.forms import ContactoForm
 from educ.forms import EstudianteForm
-from educ.models import Estudiante
+from educ.models import Estudiante, Eje
+
+
 
 # Create your views here.
 def index(request):
@@ -58,12 +60,13 @@ def estudiante_nuevo(request):
     if request.method=='POST':
         formulario = EstudianteForm(request.POST)
         if formulario.is_valid():
-            nombre=formulario.cleaned_data['nombre']
-            apellido=formulario.cleaned_data['apellido']
-            email=formulario.cleaned_data['email']
-            dni=formulario.cleaned_data['dni']
-            nuevo=Estudiante(nombre=nombre,apellido=apellido,email=email,dni=dni)
-            nuevo.save()
+            #nombre=formulario.cleaned_data['nombre']
+            #apellido=formulario.cleaned_data['apellido']
+            #email=formulario.cleaned_data['email']
+            #dni=formulario.cleaned_data['dni']
+            #nuevo=Estudiante(nombre=nombre,apellido=apellido,email=email,dni=dni)
+            #nuevo.save()
+            formulario.save()
             return redirect('estudiantes_index')
     else:
         formulario = EstudianteForm()
@@ -72,9 +75,13 @@ def estudiante_nuevo(request):
     
 def estudiantes_index(request):
     listado = Estudiante.objects.all()
-    return render(request,'educ/administracion/estudiantes/estudiantes_index.html',{'listado':listado})
+    ejes = Eje.objects.all()
+        
+    return render(request,'educ/administracion/estudiantes/estudiantes_index.html',{
+        'listado':listado,
+        'ejes':ejes})
     
-    
+      
 def estudiantes_editar(request, id_estudiante):
     try:
         estudiante = Estudiante.objects.get(pk=id_estudiante)
@@ -89,3 +96,11 @@ def estudiantes_editar(request, id_estudiante):
         formulario = EstudianteForm(instance = estudiante)
         return render(request,'educ/administracion/estudiantes/estudiantes_editar.html', {'form': formulario, 'estudiante': estudiante})
 
+
+def estudiantes_borrar(request, id_estudiante):
+    try:
+        estudiante = Estudiante.objects.get(pk=id_estudiante)
+    except Estudiante.DoesNotExist():
+        return HttpResponse("<h1>El id {{id_estudiante}} no existe")
+    estudiante.delete()
+    return redirect('estudiantes_index')

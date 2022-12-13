@@ -15,4 +15,5 @@ urlpatterns = [
     path('estudiante_nuevo',views.estudiante_nuevo, name='estudiante_nuevo'),
     path('estudiantes',views.estudiantes_index, name='estudiantes_index'),
     path('estudiantes_editar/<int:id_estudiante>',views.estudiantes_editar, name='estudiantes_editar'),
+    path('estudiantes_borrat/<int:id_estudiante>',views.estudiantes_borrar, name='estudiantes_borrar')
 ]

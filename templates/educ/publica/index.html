@@ -4,13 +4,16 @@
             {% include './banner.html' %}
             <nav>
                 <ul>
-                    <li>Inicio Ostoeduc</li>
+                    <li><a href="{% url 'inicio' %}">Inicio Ostoeduc</a></li>
                     <li><a href="{% url 'bio1' %}">Biología 1°</a></li>
                     <li><a href="/bio2.html">Biología 2°</a></li>
                     <li><a href="/bio3.html">Biología 3°</a></li>
                     <li><a href="/eco4.html">Ecología 4°</a></li>
                 </ul>
             </nav>
+            {% block registro %}
+                <a href="{% url 'estudiantes_index' %}"><button>Registro</button></a>
+            {% endblock registro %}
             <br>        
         </header>
     {% endblock header %}
@@ -23,7 +26,7 @@
                 <div id="carouselMaterias" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="item active">
-                            <a href="./bio1.html#bio1"><img src="{% static 'educ/publica/assets/img/cartel bio1.jpg' %}" alt="cartel bio1" width="100%"></a>
+                            <a href="{% url 'bio1' %}"><img src="{% static 'educ/publica/assets/img/cartel bio1.jpg' %}" alt="cartel bio1" width="100%"></a>
                         </div>
                         <div class="item">
                             <a href="./bio2.html#bio2"><img src="{% static 'educ/publica/assets/img/cartel bio2.jpg' %}" alt="cartel bio2" width="100%"></a>

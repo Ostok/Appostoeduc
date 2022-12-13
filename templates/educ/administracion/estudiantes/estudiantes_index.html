@@ -1,5 +1,6 @@
 {% extends 'educ/publica/index.html' %}
 {% block titulo %}<title> Estudiantes</title>{% endblock titulo %}
+    {% block registro %}{% endblock registro %}
 {% block contenido %}
     <table class="table">
         <thead>
@@ -9,6 +10,9 @@
                 <th>Apellido</th>
                 <th>Email</th>
                 <th>Dni</th>
+                <th>Ejes</th>
+                <th>Editar</th>
+                <th>Borrar</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +23,15 @@
                     <td>{{estudiante.apellido}}</td>
                     <td>{{estudiante.email}}</td>
                     <td>{{estudiante.dni}}</td>
+                    <td style="width: 50px">
+                        <ul>
+                            {% for eje in estudiante.ejes.values %}
+                                <li style="font-size: 50%; background-color: inherit">{{ eje.nombre }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
                     <td><button><a href="{% url 'estudiantes_editar' estudiante.id %}">Edit</a></button></td>
+                    <td><button><a href="{% url 'estudiantes_borrar' estudiante.id %}">Borrar</a></button></td>
                 </tr>
             {% endfor %}
         </tbody>
