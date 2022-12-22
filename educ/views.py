@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect
-from educ.forms import ContactoForm
-from educ.forms import EstudianteForm
+from educ.forms import ContactoForm, EstudianteForm, RegistrarUsuarioForm
 from educ.models import Estudiante, Eje
-
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms  import AuthenticationForm
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 
 # Create your views here.
 def index(request):
     return render(request,'educ/publica/index.html')
-    
+ 
+@login_required(login_url=settings.LOGIN_URL)   
 def bio1(request):
     return render(request,'educ/publica/bio1.html')
     
@@ -55,7 +59,7 @@ def contacto(request):
     contacto_form = ContactoForm()
     return render(request,'educ/publica/contacto.html',{'form': contacto_form})
     
-    
+@login_required(login_url=settings.LOGIN_URL)    
 def estudiante_nuevo(request):
     if request.method=='POST':
         formulario = EstudianteForm(request.POST)
@@ -72,7 +76,7 @@ def estudiante_nuevo(request):
         formulario = EstudianteForm()
     return render(request,'educ/administracion/estudiantes/estudiante_nuevo.html',{'form': formulario})
     
-    
+@login_required(login_url=settings.LOGIN_URL)    
 def estudiantes_index(request):
     listado = Estudiante.objects.all()
     ejes = Eje.objects.all()
@@ -81,7 +85,7 @@ def estudiantes_index(request):
         'listado':listado,
         'ejes':ejes})
     
-      
+@login_required(login_url=settings.LOGIN_URL)      
 def estudiantes_editar(request, id_estudiante):
     try:
         estudiante = Estudiante.objects.get(pk=id_estudiante)
@@ -96,7 +100,7 @@ def estudiantes_editar(request, id_estudiante):
         formulario = EstudianteForm(instance = estudiante)
         return render(request,'educ/administracion/estudiantes/estudiantes_editar.html', {'form': formulario, 'estudiante': estudiante})
 
-
+@login_required(login_url=settings.LOGIN_URL)
 def estudiantes_borrar(request, id_estudiante):
     try:
         estudiante = Estudiante.objects.get(pk=id_estudiante)
@@ -104,3 +108,35 @@ def estudiantes_borrar(request, id_estudiante):
         return HttpResponse("<h1>El id {{id_estudiante}} no existe")
     estudiante.delete()
     return redirect('estudiantes_index')
+    
+    
+def user_login (request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            form = login(request, user)
+            nxt = request.GET.get('next', None)
+            if nxt == None:
+                return redirect('inicio')
+            else:
+                return redirect(nxt)
+        else:
+            messages.error(request, f'Cuenta o password incorrecto')
+    form = AuthenticationForm()
+    return render(request,'educ/publica/login.html',{'form':form})
+
+
+def registrarse(request):
+    if request.method == 'POST':
+        form = RegistrarUsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,f'Te has registrado con éxito')
+            return redirect('login')
+        else:
+            messages.error(request, f'Nombre o password no válido')
+            
+    form = RegistrarUsuarioForm()
+    return render(request,'educ/publica/registrarse.html',{'form':form})

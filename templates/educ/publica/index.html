@@ -9,10 +9,21 @@
                     <li><a href="/bio2.html">Biología 2°</a></li>
                     <li><a href="/bio3.html">Biología 3°</a></li>
                     <li><a href="/eco4.html">Ecología 4°</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'estudiantes_index' %}">Reg. Estudiantes</a></li> 
+                    {% endif %}   
+                    
                 </ul>
             </nav>
             {% block registro %}
-                <a href="{% url 'estudiantes_index' %}"><button>Registro</button></a>
+                {% if user.is_authenticated %}
+                    <p>Bienvenido {{user.username}} .</p>
+                    <a type="button" href="{% url 'logout' %}">Logout</a>
+                    <a type="button" href="{% url 'password_change' %}">Cambiar Contraseña</a> 
+                {% else %}
+                    <a type="button" href="{% url 'login' %}">Login</a>
+                    <a type="button" href="{% url 'registrarse' %}">Registrarse</a>
+                {% endif %}
             {% endblock registro %}
             <br>        
         </header>

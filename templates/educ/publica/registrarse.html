@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+{% block titulo %}<title>Registrarse</title>{% endblock titulo %}
+{% block contenido %}
+    {% for message in messages %}
+        <div>{{ message }}</div>
+    {% endfor %}
+    <form method="POST" action="{% url 'registrarse' %}">
+        {% csrf_token %}
+        {% for campo in form %}
+            <div class="form-group">
+                <label for="">{{campo.label}}</label>
+                <input 
+                    type="{{campo.field.widget.input_type}}"
+                    name="{{campo.name}}"
+                    id="{{campo.name}}"
+                    placeholder="Ingrese {{campo.name}}"
+                    value="{{campo.value | default:''}}">           
+            </div>
+            <div>{{campo.errors}}</div>
+        {% endfor %}
+        <button>Registro</button>
+        <button><a href="{% url 'inicio' %}">Cancelar</a></button>
+    </form>
+{% endblock contenido %}

@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -15,5 +16,10 @@ urlpatterns = [
     path('estudiante_nuevo',views.estudiante_nuevo, name='estudiante_nuevo'),
     path('estudiantes',views.estudiantes_index, name='estudiantes_index'),
     path('estudiantes_editar/<int:id_estudiante>',views.estudiantes_editar, name='estudiantes_editar'),
-    path('estudiantes_borrat/<int:id_estudiante>',views.estudiantes_borrar, name='estudiantes_borrar')
+    path('estudiantes_borrar/<int:id_estudiante>',views.estudiantes_borrar, name='estudiantes_borrar'),
+    #path('cuentas/login', views.user_login, name = 'login'),
+    path('account/logout', auth_views.LogoutView.as_view(template_name='educ/publica/index.html'), name = 'logout'),
+    path('cuentas/registrarse', views.registrarse, name='registrarse'),
+    path('account/', include('django.contrib.auth.urls')),
+    path('account/password_change/',auth_views.PasswordChangeView.as_view(success_url='/'))
 ]
